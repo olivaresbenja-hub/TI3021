@@ -1,0 +1,8 @@
+PRUEBA DE CONSULTA PARAMETRIZADA
+Empleados existentes: 2
+Consulta SQL real:
+SELECT id, nombre, direccion, telefono, email, fecha_inicio, salario, departamento_id, rol FROM empleado WHERE instr(lower(nombre), lower(?)) > 0 ORDER BY id
+Parámetro enviado por separado: "' OR '1'='1"
+Resultado de buscar el payload: []
+Filas devueltas: 0
+COMPROBADO: la entrada se interpreta como texto, no como SQL.

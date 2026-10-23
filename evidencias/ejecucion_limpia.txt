@@ -1,0 +1,60 @@
+COPIA DEL ZIP Y ENTORNO VIRTUAL NUEVO
+22 de octubre de 2026. Comprobación automatizada con asistencia de IA.
+Sin paquetes de terceros; .env copiado desde .env.example.
+Creación y recuperación en procesos independientes.
+
+REVISIÓN DEL EVALUADOR — 22 DE OCTUBRE DE 2026
+
+Creación desde ZIP en entorno nuevo
+Código de salida: 0
+
+ECOTECH SOLUTIONS
+1 Empleados y roles | 2 Departamentos | 3 Proyectos
+4 Registros de horas | 5 Asignaciones | 6 Informes
+7 Contratar en proyecto | 0 Salir
+Opción: 
+--- EMPLEADOS ---
+1 Crear | 2 Listar/buscar | 3 Consultar ID | 4 Editar | 5 Eliminar | 0 Volver
+Opción: Nombre: Dirección: Teléfono: Correo: Fecha de inicio AAAA-MM-DD: Salario: Rol: empleado o gerente: ID departamento (vacío: sin asignar; -: quitar): Guardado con ID 1.
+
+--- EMPLEADOS ---
+1 Crear | 2 Listar/buscar | 3 Consultar ID | 4 Editar | 5 Eliminar | 0 Volver
+Opción: 
+ECOTECH SOLUTIONS
+1 Empleados y roles | 2 Departamentos | 3 Proyectos
+4 Registros de horas | 5 Asignaciones | 6 Informes
+7 Contratar en proyecto | 0 Salir
+Opción: Hasta luego.
+
+
+Persistencia en segundo proceso independiente
+Código de salida: 0
+
+ECOTECH SOLUTIONS
+1 Empleados y roles | 2 Departamentos | 3 Proyectos
+4 Registros de horas | 5 Asignaciones | 6 Informes
+7 Contratar en proyecto | 0 Salir
+Opción: 
+--- EMPLEADOS ---
+1 Crear | 2 Listar/buscar | 3 Consultar ID | 4 Editar | 5 Eliminar | 0 Volver
+Opción: ID: [1] Ana | empleado | ana@ecotech.cl | salario 850000.00 | departamento None
+Nombre: Ana
+Dirección: Calle 1
+Teléfono: 123
+Correo: ana@ecotech.cl
+Fecha de inicio: 2026-10-01
+Salario: 850000.0
+Rol: empleado
+ID departamento: None
+Consulta las relaciones en la opción Asignaciones del menú principal.
+
+--- EMPLEADOS ---
+1 Crear | 2 Listar/buscar | 3 Consultar ID | 4 Editar | 5 Eliminar | 0 Volver
+Opción: 
+ECOTECH SOLUTIONS
+1 Empleados y roles | 2 Departamentos | 3 Proyectos
+4 Registros de horas | 5 Asignaciones | 6 Informes
+7 Contratar en proyecto | 0 Salir
+Opción: Hasta luego.
+
+

@@ -1,0 +1,10 @@
+PRUEBA DE TRANSACCIÓN ATÓMICA
+Empleados antes: 0
+Primera escritura: INSERT del empleado.
+Segunda escritura: INSERT de asignación al proyecto inexistente 999.
+Error capturado: RelacionError
+Operación rechazada: revisa relaciones, responsable y total diario de horas.
+Empleados después del rollback: 0
+ID del objeto tras el fallo: None
+Asignaciones después: []
+COMPROBADO: la primera escritura también se revirtió.

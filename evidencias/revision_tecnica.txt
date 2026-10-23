@@ -1,0 +1,6 @@
+COMPROBACIONES TÉCNICAS DE LA ENTREGA
+37 pruebas automáticas aprobadas con asistencia de IA.
+Demos SQL, rollback y CRUD ejecutadas con código de salida 0.
+CRUD explícito por entidad; reglas agregadas en repositorios Python.
+Creación y recuperación en procesos independientes desde una copia del ZIP.
+Registros completos: pruebas.txt, sql.txt, rollback.txt, crud.txt y ejecucion_limpia.txt.

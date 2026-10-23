@@ -1,0 +1,189 @@
+{
+  "fecha": "2026-10-22",
+  "version": "ES2 entrega final",
+  "pruebas_automaticas": 37,
+  "autor_responsable": "Benjamin Olivares Mella",
+  "apoyo_ia": "Codex como herramienta de apoyo técnico; detalle en sección 6 y bitácora",
+  "archivos": [
+    {
+      "ruta": ".env.example",
+      "sha256": "308880dbf009223bd1eaeafbc6d8c5672419d271422e5ad6122677293190faf9"
+    },
+    {
+      "ruta": ".gitignore",
+      "sha256": "3256352e59e4cb43a8cdd6e00646f589d5b82fca043f81900a6242b70b3adb14"
+    },
+    {
+      "ruta": "db/01_esquema.sql",
+      "sha256": "95939b5a26a932337f9ed145587a5ef79d52da43d1392aaece0435d2e4b1a2d1"
+    },
+    {
+      "ruta": "demo.py",
+      "sha256": "cf462d5c194b156dfb65bb125dfcc6fc307c6f619987593daa9b080dbb91c7f4"
+    },
+    {
+      "ruta": "docs/BITACORA_IA.md",
+      "sha256": "39d059ce16f5156207b9b585e4e0945d47ca2430462b3eebbeb8db3135ac24af"
+    },
+    {
+      "ruta": "docs/modelo_actualizado.png",
+      "sha256": "aa6c6934c3b02a99595c70b1a7beac612fcedd2fbc62667c96e7e89ff21092ca"
+    },
+    {
+      "ruta": "docs/MODELO_ACTUALIZADO.puml",
+      "sha256": "5aefeb7ee3696be1e00617e41a7387f1626102cc141c653931d21e4ea1a55212"
+    },
+    {
+      "ruta": "docs/REVISION_TECNICA_IA.md",
+      "sha256": "26df82fe5877e28c0a2d0677fe4d889279ca8ed0ab2ad8d0a7f9b778930a684b"
+    },
+    {
+      "ruta": "dominio/__init__.py",
+      "sha256": "623d7745b5991df2f5695b87dc80467bda95d8ca114717d7e82969823a2d9cf2"
+    },
+    {
+      "ruta": "dominio/departamento.py",
+      "sha256": "3f2f45a32c403b7350ffb230e85348abbfb73f75d88d9c822cd4bd8fbfbd6b2e"
+    },
+    {
+      "ruta": "dominio/empleado.py",
+      "sha256": "1c91f9f7052b56787751d80deb743198566104e1d34fb0f63a157d0b0605a5e2"
+    },
+    {
+      "ruta": "dominio/excepciones.py",
+      "sha256": "65d9c3dfce82934995dadda8c82555b396b3add94adb6ca7f96914d29e1bde9d"
+    },
+    {
+      "ruta": "dominio/informe.py",
+      "sha256": "b19ed6c550c10f4be90592b6540c46774450c035fd821371165f3fdb9cb9e7fd"
+    },
+    {
+      "ruta": "dominio/informe_nomina.py",
+      "sha256": "0327e5cb143d7716ceb08a23e6656163a0ac39504f619a34ab70f2dbdd6e196e"
+    },
+    {
+      "ruta": "dominio/informe_proyecto.py",
+      "sha256": "39f15ce03bf12f523bae280bfb2c90d68c35f40f5ddc481133d72a134fd95ad4"
+    },
+    {
+      "ruta": "dominio/persona.py",
+      "sha256": "898d731a0456faa6d37dce6d8275e892abf193283247135386afbeb9b0589099"
+    },
+    {
+      "ruta": "dominio/proyecto.py",
+      "sha256": "cd116b51c13055f6d2112e16ef7c6b63e1f8e484f6428c51888a399cfb72cf26"
+    },
+    {
+      "ruta": "dominio/registro_tiempo.py",
+      "sha256": "f5435fdfe213525dfc27992de869442fddce67bb0aaa1dc606a0b47ee74b6fc2"
+    },
+    {
+      "ruta": "dominio/validaciones.py",
+      "sha256": "d44f258f37672da09d18bee58ab1ac00dc8e9f7059f13d3c188a919c145a5d22"
+    },
+    {
+      "ruta": "evidencias/crud.html",
+      "sha256": "adc62b2de2b36b9e977023cf9c958fbf6ed92bcedc486ca7d1f59129faf4c757"
+    },
+    {
+      "ruta": "evidencias/crud.txt",
+      "sha256": "5af868174a6c4a393e4f9f49386d809718140b6a104efad4af923d10959845ad"
+    },
+    {
+      "ruta": "evidencias/ejecucion_limpia.txt",
+      "sha256": "430988066ec881545c02b23f84648735742919c81f9ba8814cd78a21a6d1f9dd"
+    },
+    {
+      "ruta": "evidencias/pruebas.txt",
+      "sha256": "595117c6ed376211f6ad284dd89bee51486f643619dc8f7979694febcf0bfd61"
+    },
+    {
+      "ruta": "evidencias/revision_tecnica.txt",
+      "sha256": "15a4c975af096f29cfcbf24737816d67bf785a5c73b0d0bc6950ef51c0f1545c"
+    },
+    {
+      "ruta": "evidencias/rollback.html",
+      "sha256": "4b6a6d034ecaee1177511e517ecf5af978d421e93a3cca6d87a5e310969a96f1"
+    },
+    {
+      "ruta": "evidencias/rollback.txt",
+      "sha256": "bf6d6d4a8f505606f07de2be2fc78bce49a0244d6ca59f1f10f112a78235e74a"
+    },
+    {
+      "ruta": "evidencias/rollback_captura.png",
+      "sha256": "8e889d797f28178f04c0e70849e78ba32a4a01237d2cdd4df185be3f2f21a7ca"
+    },
+    {
+      "ruta": "evidencias/sql.html",
+      "sha256": "1155c4e1d94692e7e17d3bef8ddc02c7fb6cdfb0c728b97aaeba1691296e2184"
+    },
+    {
+      "ruta": "evidencias/sql.txt",
+      "sha256": "b1a0137a9f88a70daa6ea550388059c5ccec3392f538baef800aec8da350afa8"
+    },
+    {
+      "ruta": "evidencias/sql_captura.png",
+      "sha256": "9d4881ae158c676d8a73791ad207fb3701e0a8eac8db7408996aed0067c2973d"
+    },
+    {
+      "ruta": "Informe_ES2_EcoTech.docx",
+      "sha256": "e45b8a3913a1b5b2484abd9c864dec11ab9f32d2b080c160e090fea2148884c3"
+    },
+    {
+      "ruta": "Informe_ES2_EcoTech.pdf",
+      "sha256": "0ec18f5a54951a34c08f291783d84ee2861e557828e58d68050e2d29c42e260c"
+    },
+    {
+      "ruta": "iniciar.cmd",
+      "sha256": "c0634018f5043c73f777cc668750893ebe5bca25b681d7730376dc4fe71384c4"
+    },
+    {
+      "ruta": "main.py",
+      "sha256": "696a2297eb2c6b99972f9019d6e1d5bf32f3bff70a988786215fc5d379d8f818"
+    },
+    {
+      "ruta": "README.md",
+      "sha256": "cd8aa42d1a70dd73d5ce2d253d666a4b162790f5dda2af3504c2069c0039df22"
+    },
+    {
+      "ruta": "repositorio/__init__.py",
+      "sha256": "623d7745b5991df2f5695b87dc80467bda95d8ca114717d7e82969823a2d9cf2"
+    },
+    {
+      "ruta": "repositorio/conexion.py",
+      "sha256": "e7383e495ee8c716d0d3b500cc5e22a2d33c8d01cc92e3d9b9b4b31b74729d94"
+    },
+    {
+      "ruta": "repositorio/departamento_repo.py",
+      "sha256": "d809655ddd58be530c4a994036347ee3d0e04eb60d85b42109dc8b5b7186625d"
+    },
+    {
+      "ruta": "repositorio/empleado_repo.py",
+      "sha256": "992f9f195f5cde6c409691a7e4056700f6d22dcd9636d880ce3431318ec97b26"
+    },
+    {
+      "ruta": "repositorio/proyecto_repo.py",
+      "sha256": "4d2f953e16ff4222e2358f597d5e7f3fac498410302575ffb3c930d8b9090622"
+    },
+    {
+      "ruta": "repositorio/registro_tiempo_repo.py",
+      "sha256": "d116b652d5cc128f128a87be76e11110d40277b97e3944ae1510bfa21b59370f"
+    },
+    {
+      "ruta": "repositorio/sistema_repo.py",
+      "sha256": "2ab167f2c99ed3484a2646e5ed7ca6a50f1eb5a820ce630fbc43590b60b8cbfb"
+    },
+    {
+      "ruta": "requirements.txt",
+      "sha256": "1598ba42db27a490fb7874eb8013d564c8219c693fd6dc3866c70b8198d17257"
+    },
+    {
+      "ruta": "tests/__init__.py",
+      "sha256": "623d7745b5991df2f5695b87dc80467bda95d8ca114717d7e82969823a2d9cf2"
+    },
+    {
+      "ruta": "tests/test_sistema.py",
+      "sha256": "b41ec7ebcb5b36d059db6cbfb2a4447ea586b7603c57490fe1e1068587b35457"
+    }
+  ]
+}

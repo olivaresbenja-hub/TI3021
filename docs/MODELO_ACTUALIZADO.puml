@@ -1,0 +1,63 @@
+@startuml
+title Modelo actualizado EcoTech ES2
+class Persona {
+  id: int
+  nombre: str
+  direccion: str
+  telefono: str
+  email: str
+  actualizar_datos(nombre, email)
+}
+class Empleado {
+  fecha_inicio: date
+  salario: float
+  rol: str
+  departamento_id: int
+  subir_salario(aumento)
+  asignar_departamento(departamento)
+}
+class Departamento {
+  id: int
+  nombre: str
+  gerente_id: int
+  asignar_empleado(empleado)
+}
+class Proyecto {
+  id: int
+  nombre: str
+  descripcion: str
+  fecha_inicio: date
+}
+class RegistroTiempo {
+  id: int
+  empleado_id: int
+  proyecto_id: int
+  fecha: date
+  horas: float
+  descripcion: str
+}
+abstract class Informe {
+  {abstract} exportar(): str
+}
+class InformeNomina {
+  empleados: list
+  exportar(): str
+}
+class InformeProyecto {
+  proyecto: Proyecto
+  registros: list
+  exportar(): str
+}
+Persona <|-- Empleado
+Departamento "0..1" -- "0..*" Empleado : pertenencia
+Departamento "0..1" -- "0..1" Empleado : responsabilidad si rol gerente
+Empleado "0..*" -- "0..*" Proyecto : empleado_proyecto
+Empleado "1" -- "0..*" RegistroTiempo
+Proyecto "1" -- "0..*" RegistroTiempo
+Informe <|-- InformeNomina
+Informe <|-- InformeProyecto
+note bottom of Empleado
+  Gerente es un rol, no una subclase.
+  El rol y la relacion identifican al responsable del departamento.
+end note
+@enduml

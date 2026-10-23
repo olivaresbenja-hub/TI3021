@@ -1,0 +1,79 @@
+test_actualizar_datos_no_deja_cambio_parcial (tests.test_sistema.PruebasEcoTech.test_actualizar_datos_no_deja_cambio_parcial)
+Valida los dos datos antes de cambiarlos. ... ok
+test_actualizar_esquema_anterior_conserva_datos (tests.test_sistema.PruebasEcoTech.test_actualizar_esquema_anterior_conserva_datos)
+La transición retira un trigger anterior y mantiene los empleados guardados. ... ok
+test_asignacion_duplicada (tests.test_sistema.PruebasEcoTech.test_asignacion_duplicada)
+Rechaza una segunda relación idéntica. ... ok
+test_asignar_y_retirar_se_guardan (tests.test_sistema.PruebasEcoTech.test_asignar_y_retirar_se_guardan)
+Regresión de las asignaciones que antes quedaban solo en memoria. ... ok
+test_borrados_no_pierden_historial (tests.test_sistema.PruebasEcoTech.test_borrados_no_pierden_historial)
+Un empleado con horas no puede desaparecer ni desvincularse. ... ok
+test_busqueda_payload_y_comillas_literal (tests.test_sistema.PruebasEcoTech.test_busqueda_payload_y_comillas_literal)
+Aísla entradas de usuario de la sintaxis SQL. ... ok
+test_configuracion_ausente (tests.test_sistema.PruebasEcoTech.test_configuracion_ausente)
+La falta de .env produce un error de configuración comprensible. ... ok
+test_contratacion_atomica_exitosa (tests.test_sistema.PruebasEcoTech.test_contratacion_atomica_exitosa)
+Confirma conjuntamente el empleado y su relación. ... ok
+test_contratacion_revierte_primera_escritura (tests.test_sistema.PruebasEcoTech.test_contratacion_revierte_primera_escritura)
+La segunda escritura falla por FK y revierte la primera. ... ok
+test_correo_con_reglas_explicitas (tests.test_sistema.PruebasEcoTech.test_correo_con_reglas_explicitas)
+Comprueba partes y espacios después de retirar la expresión regular. ... ok
+test_correo_duplicado_error_negocio (tests.test_sistema.PruebasEcoTech.test_correo_duplicado_error_negocio)
+Traduce el error UNIQUE y conserva el registro original. ... ok
+test_crud_departamento (tests.test_sistema.PruebasEcoTech.test_crud_departamento)
+Comprueba cambios y borrado del departamento. ... ok
+test_crud_empleado_persistencia (tests.test_sistema.PruebasEcoTech.test_crud_empleado_persistencia)
+Comprueba el ciclo completo y una conexión independiente. ... ok
+test_crud_proyecto (tests.test_sistema.PruebasEcoTech.test_crud_proyecto)
+Comprueba cambios y borrado del proyecto. ... ok
+test_crud_registro (tests.test_sistema.PruebasEcoTech.test_crud_registro)
+Comprueba las cuatro operaciones de horas. ... ok
+test_departamento_rechaza_responsable_ajeno (tests.test_sistema.PruebasEcoTech.test_departamento_rechaza_responsable_ajeno)
+La edición directa del departamento comprueba rol y pertenencia. ... ok
+test_editar_fecha_respeta_horas_del_dia_destino (tests.test_sistema.PruebasEcoTech.test_editar_fecha_respeta_horas_del_dia_destino)
+Cambiar la fecha no permite trasladar horas a un día ya completo. ... ok
+test_esquema_repetible_y_conexion_fallida (tests.test_sistema.PruebasEcoTech.test_esquema_repetible_y_conexion_fallida)
+Inicializar dos veces conserva la estructura; una ruta mala se informa. ... ok
+test_fechas_y_campos_vacios (tests.test_sistema.PruebasEcoTech.test_fechas_y_campos_vacios)
+Impide fechas inexistentes y texto vacío al crear y modificar. ... ok
+test_formulario_empleado_conserva_y_retira_departamento (tests.test_sistema.PruebasEcoTech.test_formulario_empleado_conserva_y_retira_departamento)
+Enter conserva los datos y '-' retira solo el departamento opcional. ... ok
+test_formularios_proyecto_y_horas_editan_sin_perder_datos (tests.test_sistema.PruebasEcoTech.test_formularios_proyecto_y_horas_editan_sin_perder_datos)
+El formulario explícito conserva las fechas y la identidad al editar. ... ok
+test_gerente_es_rol_modificable (tests.test_sistema.PruebasEcoTech.test_gerente_es_rol_modificable)
+Cambiar de rol conserva la misma clase y el mismo ID. ... ok
+test_horas_diarias_limite_y_actualizacion (tests.test_sistema.PruebasEcoTech.test_horas_diarias_limite_y_actualizacion)
+No permite sumar más de 24 horas, ni al insertar ni al editar. ... ok
+test_horas_exigen_asignacion (tests.test_sistema.PruebasEcoTech.test_horas_exigen_asignacion)
+La clave compuesta evita registrar horas sin participación. ... ok
+test_horas_individuales_invalidas (tests.test_sistema.PruebasEcoTech.test_horas_individuales_invalidas)
+Rechaza cantidades inválidas antes de llegar a SQLite. ... ok
+test_ids_fuera_de_rango_rechazados (tests.test_sistema.PruebasEcoTech.test_ids_fuera_de_rango_rechazados)
+Regresión del OverflowError encontrado en la versión anterior. ... ok
+test_informes_polimorficos (tests.test_sistema.PruebasEcoTech.test_informes_polimorficos)
+Dos clases concretas responden exportar con cálculos distintos. ... ok
+test_mapeo_conserva_todos_los_datos_personales_y_laborales (tests.test_sistema.PruebasEcoTech.test_mapeo_conserva_todos_los_datos_personales_y_laborales)
+Recuperar una tupla conserva cada campo y su lugar en la consulta. ... ok
+test_menu_crud_completo (tests.test_sistema.PruebasEcoTech.test_menu_crud_completo)
+Recorre creación, consulta, edición y eliminación con entradas reales. ... ok
+test_menu_no_se_cierra_por_id_enorme (tests.test_sistema.PruebasEcoTech.test_menu_no_se_cierra_por_id_enorme)
+El menú explica la entrada inválida y admite salir normalmente. ... ok
+test_no_encontrado_y_claves_foraneas (tests.test_sistema.PruebasEcoTech.test_no_encontrado_y_claves_foraneas)
+Traduce fallos de registro y relaciones a errores del negocio. ... ok
+test_responsable_debe_tener_rol_gerente (tests.test_sistema.PruebasEcoTech.test_responsable_debe_tener_rol_gerente)
+Valida el rol antes de modificar responsabilidades. ... ok
+test_responsable_no_puede_perder_rol_sin_retirarlo (tests.test_sistema.PruebasEcoTech.test_responsable_no_puede_perder_rol_sin_retirarlo)
+El repositorio conserva coherentes responsabilidad y rol. ... ok
+test_responsable_no_se_mueve_sin_retirar_responsabilidad (tests.test_sistema.PruebasEcoTech.test_responsable_no_se_mueve_sin_retirar_responsabilidad)
+Un cambio aislado de empleado no deja al área con un responsable ajeno. ... ok
+test_rol_invalido (tests.test_sistema.PruebasEcoTech.test_rol_invalido)
+Limita el rol a las opciones del modelo. ... ok
+test_salario_y_aumento_no_alteran_estado_invalido (tests.test_sistema.PruebasEcoTech.test_salario_y_aumento_no_alteran_estado_invalido)
+La propiedad conserva el valor anterior al rechazar una entrada. ... ok
+test_sql_no_se_construye_en_tiempo_de_ejecucion (tests.test_sistema.PruebasEcoTech.test_sql_no_se_construye_en_tiempo_de_ejecucion)
+Impide reintroducir f-strings, suma de cadenas o format en execute. ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.952s
+
+OK
