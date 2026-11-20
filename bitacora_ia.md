@@ -1,13 +1,13 @@
 # Bitácora de IA · ES3
 
-Codex apoyó la implementación y las pruebas.
+A solicitud del estudiante, Codex ejecutó pruebas automatizadas sobre los casos que la pauta indica para la evaluación en sala. Codex también apoyó la implementación.
 
-| Revisión | Decisión y comprobación |
-|---|---|
-| SQL construido con f-strings o concatenación | Sentencias fijas con parámetros `?`. Una clave primaria compuesta evita duplicar respaldos de la misma consulta. |
-| `verify=False` | Requests verifica TLS. La prueba de certificado rechazado confirma que se informa el error sin reintentar. |
-| `except: pass` | Se capturan errores concretos. Las pruebas muestran cómo se informan el HTTP 404 y el JSON inválido. |
-| Solicitudes sin `timeout` | El cliente usa 4 s para conexión y 8 s para lectura por intento. Las pruebas revisan el máximo de tres intentos, las esperas de 1 y 2 s y el manejo de `Retry-After`. |
-| Dependencias inexistentes | [Requests](https://pypi.org/project/requests/) y [argon2-cffi](https://pypi.org/project/argon2-cffi/) se instalaron en un entorno limpio. `pip check` pasó. |
+| Qué se revisó | Decisión | Cómo se comprobó |
+|---|---|---|
+| F-strings o concatenación en SQL | Se mantuvieron sentencias fijas con parámetros `?` para enviar los valores por separado. | La suite comprueba que el repositorio use SQL estático. |
+| `verify=False` | Se descartó desactivar la verificación TLS. | Una prueba simula un error TLS y comprueba que el cliente lo informa tras un solo intento. |
+| `except: pass` | Se descartó silenciar errores. El cliente captura excepciones concretas y devuelve un mensaje breve. | Se simularon HTTP 404 y JSON inválido. |
+| Solicitudes sin `timeout` | Se fijaron 4 s para conectar y 8 s para leer por intento. Se permiten hasta tres intentos ante fallos temporales. | Se comprobaron los tiempos configurados, las esperas de 1 y 2 s y el manejo de `Retry-After`. |
+| Dependencias sin verificar | Se usaron [Requests](https://pypi.org/project/requests/) y [argon2-cffi](https://pypi.org/project/argon2-cffi/). | Ambas se instalaron en un entorno limpio y `pip check` pasó. |
 
-Se eligió Argon2id para guardar el hash de la contraseña con sal. Ante una falla temporal de la API, EcoTech lee el último respaldo de SQLite y muestra su fecha original y su antigüedad.
+Se eligió Argon2id para guardar el hash de la contraseña con sal. Ante una falla temporal, EcoTech usa el respaldo de SQLite si existe y muestra cuándo se obtuvo.

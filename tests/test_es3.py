@@ -1,4 +1,4 @@
-"""Pruebas del acceso, los reintentos y las comprobaciones de la sesión C14."""
+"""Pruebas de autenticación, reintentos y respaldo local."""
 from contextlib import redirect_stdout
 from datetime import timedelta, datetime, timezone
 from email.utils import format_datetime
@@ -91,7 +91,7 @@ class PruebasCliente(TestCase):
             Deserializador.clima({'current': {}}, 'Santiago')
 
 
-class PruebasEnSala(TestCase):
+class PruebasES3(TestCase):
     def setUp(self):
         temporal = TemporaryDirectory()
         self.addCleanup(temporal.cleanup)
