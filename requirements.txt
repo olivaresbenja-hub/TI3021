@@ -1,1 +1,2 @@
-# Solo biblioteca estándar de Python 3.10 o posterior. No instalar paquetes.
+requests>=2.34.2,<3
+argon2-cffi>=25.1.0,<26

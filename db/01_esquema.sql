@@ -1,3 +1,5 @@
+BEGIN;
+
 CREATE TABLE IF NOT EXISTS departamento (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL UNIQUE CHECK(length(trim(nombre)) > 0),
@@ -48,3 +50,20 @@ DROP TRIGGER IF EXISTS gerente_al_actualizar;
 DROP TRIGGER IF EXISTS conservar_responsable;
 DROP TRIGGER IF EXISTS horas_diarias_insertar;
 DROP TRIGGER IF EXISTS horas_diarias_actualizar;
+
+CREATE TABLE IF NOT EXISTS usuario (
+    id INTEGER PRIMARY KEY CHECK(id = 1),
+    nombre TEXT NOT NULL,
+    hash_clave TEXT NOT NULL CHECK(hash_clave LIKE '$argon2id$%')
+);
+
+CREATE TABLE IF NOT EXISTS dato_externo (
+    proyecto_id INTEGER NOT NULL REFERENCES proyecto(id) ON DELETE CASCADE,
+    tipo TEXT NOT NULL CHECK(tipo IN ('clima', 'cotización')),
+    clave TEXT NOT NULL,
+    obtenido_en TEXT NOT NULL,
+    datos TEXT NOT NULL,
+    PRIMARY KEY (proyecto_id, tipo, clave)
+);
+
+COMMIT;

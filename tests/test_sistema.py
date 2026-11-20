@@ -108,7 +108,8 @@ class PruebasEcoTech(unittest.TestCase):
         """El menú explica la entrada inválida y admite salir normalmente."""
         salida = StringIO()
         entradas = ['1', '3', str(10 ** 30), '0', '0']
-        with patch('main.BaseDatos', return_value=self.base):
+        with (patch('main.BaseDatos', return_value=self.base),
+              patch('main.iniciar_sesion', return_value=True)):
             with patch('builtins.input', side_effect=entradas), redirect_stdout(salida):
                 self.assertEqual(main(), 0)
         self.assertIn('No se completó', salida.getvalue())
@@ -326,7 +327,8 @@ class PruebasEcoTech(unittest.TestCase):
                     '4', '1', '', '', '', '', '', '850000', '', '',
                     '3', '1', '5', '1', 'SI', '0', '0']
         salida = StringIO()
-        with patch('main.BaseDatos', return_value=self.base):
+        with (patch('main.BaseDatos', return_value=self.base),
+              patch('main.iniciar_sesion', return_value=True)):
             with patch('builtins.input', side_effect=entradas), redirect_stdout(salida):
                 self.assertEqual(main(), 0)
         self.assertIn('850000.0', salida.getvalue())

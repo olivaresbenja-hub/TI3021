@@ -1,4 +1,7 @@
 """Repositorio coordinador de relaciones y operaciones de varias escrituras."""
+from datetime import datetime, timezone
+import json
+
 from dominio.empleado import Empleado
 from dominio.excepciones import RelacionError, RegistroNoEncontradoError
 from dominio.validaciones import identificador
@@ -52,6 +55,49 @@ class SistemaEcoTech:
                 'JOIN proyecto p ON p.id = ep.proyecto_id ORDER BY e.id, p.id'
             ).fetchall()
         return filas
+
+    def empleados_por_proyecto(self, proyecto_id: int) -> list:
+        """Obtiene los datos necesarios para estimar el salario de un asignado."""
+        identificador(proyecto_id)
+        with self.base.conexion() as conn:
+            return conn.execute(
+                'SELECT e.id, e.nombre, e.salario FROM empleado e '
+                'JOIN empleado_proyecto ep ON ep.empleado_id = e.id '
+                'WHERE ep.proyecto_id = ? ORDER BY e.id',
+                (proyecto_id,),
+            ).fetchall()
+
+    def guardar_dato_externo(self, proyecto_id, tipo, clave, datos):
+        """Actualiza la última respuesta válida para la misma consulta."""
+        obtenido_en = datetime.now(timezone.utc).isoformat(timespec='seconds')
+        with self.base.conexion() as conn:
+            conn.execute(
+                'INSERT INTO dato_externo (proyecto_id, tipo, clave, obtenido_en, datos) '
+                'VALUES (?, ?, ?, ?, ?) ON CONFLICT (proyecto_id, tipo, clave) DO UPDATE '
+                'SET obtenido_en = excluded.obtenido_en, datos = excluded.datos',
+                (proyecto_id, tipo, clave, obtenido_en, json.dumps(datos, ensure_ascii=False)),
+            )
+        return obtenido_en
+
+    def obtener_dato_externo(self, proyecto_id, tipo, clave):
+        with self.base.conexion() as conn:
+            fila = conn.execute(
+                'SELECT obtenido_en, datos FROM dato_externo WHERE proyecto_id = ? AND tipo = ? AND clave = ?',
+                (proyecto_id, tipo, clave),
+            ).fetchone()
+        if fila is None:
+            return None
+        obtenido_en, datos = fila
+        return obtenido_en, json.loads(datos)
+
+    def consultas_externas_recientes(self) -> list:
+        """Recupera los 15 respaldos más recientes para el menú."""
+        with self.base.conexion() as conn:
+            filas = conn.execute(
+                'SELECT d.obtenido_en, p.nombre, d.tipo, d.datos FROM dato_externo d '
+                'JOIN proyecto p ON p.id = d.proyecto_id ORDER BY d.obtenido_en DESC LIMIT 15'
+            ).fetchall()
+        return [(fecha, proyecto, tipo, json.loads(datos)) for fecha, proyecto, tipo, datos in filas]
 
     def asignar_gerente(self, empleado_id: int, departamento_id: int):
         """Mueve a un empleado con rol gerente y asigna su responsabilidad atómicamente."""

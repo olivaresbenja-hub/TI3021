@@ -9,6 +9,8 @@ from dominio.validaciones import identificador
 from dominio.informe_nomina import InformeNomina
 from dominio.informe_proyecto import InformeProyecto
 from repositorio.sistema_repo import SistemaEcoTech
+from acceso import iniciar_sesion
+from menu_servicios import menu_servicios
 
 
 def leer_id(mensaje="ID: "):
@@ -280,12 +282,14 @@ def main():
     try:
         base = BaseDatos()
         base.inicializar()
+        if not iniciar_sesion(base):
+            return 1
         sistema = SistemaEcoTech(base)
         while True:
             print("\nECOTECH SOLUTIONS")
             print("1 Empleados y roles | 2 Departamentos | 3 Proyectos")
             print("4 Registros de horas | 5 Asignaciones | 6 Informes")
-            print("7 Contratar en proyecto | 0 Salir")
+            print("7 Contratar en proyecto | 8 Servicios externos | 0 Salir")
             opcion = input("Opción: ").strip()
             if opcion == "0":
                 print("Hasta luego.")
@@ -296,6 +300,8 @@ def main():
                 mostrar_informes(sistema)
             elif opcion == "7":
                 contratar(sistema)
+            elif opcion == "8":
+                menu_servicios(sistema, leer_id)
             elif opcion in ("1", "2", "3", "4"):
                 entidades = {"1": "empleados", "2": "departamentos",
                              "3": "proyectos", "4": "registros"}
